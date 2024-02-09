@@ -61,6 +61,5 @@ describe('newOrder', () => {
     test("Controllo quantità", () => {
       expect(giftCardData.quantita>0).toBe(true);
     });
-  
   });
 });

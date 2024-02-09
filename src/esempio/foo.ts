@@ -1,3 +1,5 @@
+export const ordinilist : ordine[] = []; 
+
 type ordine = {
   cf : string,
   name : string,
@@ -21,4 +23,13 @@ type Giftcard = {
     giftcard : [],
   }
   return ordine; 
+ }
+
+ export const addGiftcard = ({digitale, taglio, quantita}) :  ordine => {
+  const ordine : ordine = ordinilist [ordinilist.length-1];
+  ordine.giftcard.push(digitale, taglio, quantita);
+  if(ordine.giftcard[ordine.giftcard.length-1].taglio === taglio){
+    ordine.giftcard[ordine.giftcard.length-1].quantita = ordine.giftcard[ordine.giftcard.length-1].quantita + quantita;
+  }
+  return ordine;
  }
