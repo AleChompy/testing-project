@@ -41,3 +41,20 @@ type TypeAmount = {
   return ordine;
 }
 
+export const getAmount = (): TypeAmount => {
+  const ordine: ordine = ordinilist[ordinilist.length - 1];
+  let imponibile: number = 0
+  let iva: number = 0
+  let imponibileIva: number = 0
+  for (let i = 0; i < ordine.giftcard.length; i++) {
+    imponibile = imponibile + (ordine.giftcard[i].taglio * ordine.giftcard[i].quantita)
+  }
+  iva = imponibile * 0.22
+  imponibileIva = imponibile + iva
+  const amount: TypeAmount = {
+    imponibile: imponibile,
+    iva: iva,
+    sommaIva: imponibileIva
+  }
+  return amount;
+}
