@@ -1,4 +1,4 @@
-type customer = {
+type ordine = {
   cf : string,
   name : string,
   surname : string,
@@ -12,8 +12,8 @@ type Giftcard = {
   quantita : number,
 }
 
- export const newOrder = ({cf, name, surname, email}) : customer => {
-  const ordine : customer  = {
+ export const newOrder = ({cf, name, surname, email}) : ordine => {
+  const ordine : ordine  = {
     cf : cf,
     name : name,
     surname : surname,

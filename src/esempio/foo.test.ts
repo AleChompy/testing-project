@@ -8,6 +8,12 @@ const customerData = {
   email : "ale-arrigoni@live.com"
 }
 
+const giftCardData = {
+  digitale : true, 
+  taglio : 100,
+  quantita : 1,
+}
+
 describe('newOrder', () => {
     test('Crea correttamente un ordine', () => {
         const order = newOrder(customerData);
@@ -45,4 +51,16 @@ describe('newOrder', () => {
       expect(customerData.cf.length === 16).toBe(true);
       expect((customerData.cf.match(/[A-Z]/g) || []).length==9).toBe(true);
     }); 
+
+  
+  describe('addGiftcard', () => {
+    test("Controllo taglio giftcard", () => {
+      expect(giftCardData.taglio===10 || giftCardData.taglio===20 || giftCardData.taglio===50 || giftCardData.taglio===100).toBe(true);
+    });
+
+    test("Controllo quantità", () => {
+      expect(giftCardData.quantita>0).toBe(true);
+    });
+  
+  });
 });
