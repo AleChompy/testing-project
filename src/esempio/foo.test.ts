@@ -1,10 +1,11 @@
+import { newOrder } from "./foo";
 
 // Test newOrder
 const customerData = {
-  cf : "AAA132215C12",
-  name : "alberto",
-  surname : "palezza",
-  email : "oba@oba.it"
+  cf : "RRGLSN03P13F133C",
+  name : "Alessandro",
+  surname : "Arrigoni",
+  email : "ale-arrigoni@live.com"
 }
 
 describe('newOrder', () => {
@@ -15,16 +16,16 @@ describe('newOrder', () => {
 
     test('ordine contiene i dati corretti', () => {
         const order = newOrder(customerData);
-        expect(order.customerCf).toBe(customerData.cf);
-        expect(order.customerName).toBe(customerData.name);
-        expect(order.customerSurname).toBe(customerData.surname);
-        expect(order.customerEmail).toBe(customerData.email);
+        expect(order.cf).toBe(customerData.cf);
+        expect(order.name).toBe(customerData.name);
+        expect(order.surname).toBe(customerData.surname);
+        expect(order.email).toBe(customerData.email);
     });
   
 
     test('cf del cliente nell ordine è corretto', () => {
         const order = newOrder(customerData);
-        expect(order.customerCf).toBe(customerData.cf);
+        expect(order.cf).toBe(customerData.cf);
     });
   
 
@@ -42,6 +43,6 @@ describe('newOrder', () => {
 
     test ("controllo cf", () => {
       expect(customerData.cf.length === 16).toBe(true);
-      expect(customerData.cf.replace("/[^A-Z]/gi","").length==9).toBe(true);
-    }); 0
+      expect((customerData.cf.match(/[A-Z]/g) || []).length==9).toBe(true);
+    }); 
 });
