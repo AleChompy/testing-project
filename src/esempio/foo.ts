@@ -14,6 +14,13 @@ type Giftcard = {
   quantita : number,
 }
 
+type TypeAmount = {
+  iva : number; 
+  imponibile : number; 
+  sommaIva : number,
+}
+
+
  export const newOrder = ({cf, name, surname, email}) : ordine => {
   const ordine : ordine  = {
     cf : cf,
@@ -23,7 +30,7 @@ type Giftcard = {
     giftcard : [],
   }
   return ordine; 
- }
+}
 
  export const addGiftcard = ({digitale, taglio, quantita}) :  ordine => {
   const ordine : ordine = ordinilist [ordinilist.length-1];
@@ -32,4 +39,5 @@ type Giftcard = {
     ordine.giftcard[ordine.giftcard.length-1].quantita = ordine.giftcard[ordine.giftcard.length-1].quantita + quantita;
   }
   return ordine;
- }
+}
+

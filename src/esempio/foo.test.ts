@@ -51,8 +51,8 @@ describe('newOrder', () => {
       expect(customerData.cf.length === 16).toBe(true);
       expect((customerData.cf.match(/[A-Z]/g) || []).length==9).toBe(true);
     }); 
+  });
 
-  
   describe('addGiftcard', () => {
     test("Controllo taglio giftcard", () => {
       expect(giftCardData.taglio===10 || giftCardData.taglio===20 || giftCardData.taglio===50 || giftCardData.taglio===100).toBe(true);
@@ -62,4 +62,9 @@ describe('newOrder', () => {
       expect(giftCardData.quantita>0).toBe(true);
     });
   });
-});
+
+  describe('getAmount', () => {
+    test("Happy path", () => {
+      
+    })
+  }); 
